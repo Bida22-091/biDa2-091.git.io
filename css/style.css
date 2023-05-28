@@ -1,0 +1,348 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navbar{
+    width: 100%;
+    height: 5.5em;
+    background-color: black;
+    color: white;
+}
+
+.navbar-container{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    padding:0 3.125em; 
+    height: 6.25em;
+    color: white;
+}
+
+.logo-container{
+    flex: 1;
+    height: fit-content;
+    margin-top: 0%;
+    padding: 0%;
+    background-color: black;
+}
+
+.logo{
+   height: 70%;
+    width: 70%;
+    position: relative;
+    padding: 0;
+    background-color: black;
+   
+}
+
+
+.menu-container{
+    flex: 6;
+    height: 30%;
+    width: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+    justify-content: space-between;
+    margin-right: 30%;
+
+}
+
+
+.menu-list{
+    display: flex;
+   list-style-type: none;
+   font-weight: bold;
+   
+}
+
+.menu-list-item{
+    margin-right:1.875em ;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 0.125em;
+    flex:6;
+    
+}
+
+.menu-list-item.hover{
+    background-color: #eaeaea;
+}
+
+.menu-list-item .active{
+    font-weight: bold;
+}
+
+.menu-list-item .ent,.menu-list-item .response{
+    margin-right: 3.125em;
+    justify-content: space-between;
+}
+
+.profile-container{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.profile-picture{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.toggle{
+    width: 2.5em;
+    height: 1.25em;
+    background-color: white;
+    border-radius: 1.875em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.toggle-icon{
+    color: goldenrod;
+}
+
+.toggle-ball{
+    width: 1.125em;
+    height: 1.125em;
+    background-color: black;
+    position: absolute;
+    right: 0.0625em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profile-text-container{
+    font-style: normal;
+    font-size: small;
+    margin: 0 1.25em;
+
+}
+
+.sidebar{
+    width: 3.125em;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3.75em;
+}
+
+.left-menu-icon{
+    color: white;
+    font-size: 1.25em;
+    margin-bottom: 2.5em;
+}
+
+.container{
+    background-color:#151515 ;
+    min-height: calc(100vh-3.125em);
+    color: white;
+
+}
+
+.content-container{
+    margin-left: 3.125em;
+}
+
+.featured-content{
+    height: 50vh;
+    padding: 3.125em;
+}
+
+.featured-title{
+    width: 12.5em;
+}
+
+.featured-desc{
+    width: 31.25em;
+    color: lightgray;
+    margin: 1.875em 0;
+}
+
+.featured-button{
+    background-color:#4dbf00;
+    color: white;
+    padding: 0.625em 1.25em;
+    border-radius: 0.625em;
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+.movie-list-container{
+    padding: 0 1.25em;
+}
+
+@media only screen and (max-width: 940px){
+    .menu-container{
+        display: none;
+    } }
+
+.movie-list-wrapper{
+    position: relative;
+    overflow: hidden;
+   
+}
+
+div.movie.list{
+    display: flex;
+    align-items: center;
+    height: 18.75em;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+}
+
+.movie-list-item{
+    margin-right: 1.875em;
+    position: relative;  
+}
+
+
+.movie-list-item:hover .movie-list-item-img{
+    transform: scale(1.2);
+    margin: 0 1.875em;
+    opacity: 0.5;
+}
+
+.movie-list-item:hover .movie-list-item-title,
+.movie-list-item:hover .movie-list-item-desc,
+.movie-list-item:hover .movie-list-item-button{
+    opacity: 1;
+}
+
+
+.movie-list-item-img{
+    transition: all 1s ease-in-out;
+    width: 16.875em;
+    height: 12.5em;
+    object-fit: cover;
+    border-radius: 1.25em;
+}
+
+.movie-list-item-title{
+    background-color: #333;
+    padding: 0 0.625em;
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 3.125em;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.movie-list-item-desc{
+    background-color: #333;
+    padding: 0.625em;
+    font-size: 0.875em;
+    position: absolute;
+    top: 30%;
+    left: 3.125em;
+    width: 14.375em;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.movie-list-item-button{
+    padding: 0.625em;
+    background-color: #4dbf00;
+    color: white;
+    border-radius: 10%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 1.25em;
+    left: 3.125em;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.arrow{
+    font-size: 120px;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    opacity: .5;
+    color: lightgray;
+    cursor: pointer;
+}
+
+.container.active{
+    background-color: white;
+}
+
+.movie-list-title.active{
+    color: black;
+}
+
+.navbar-container.active {
+    background-color: white;
+    color: black;
+  }
+  
+  .sidebar.active{
+      background-color: white;
+  }
+  
+  .left-menu-icon.active{
+      color: black;
+  }
+  
+  .toggle.active{
+      background-color: black;
+  }
+  
+  .toggle-ball.active{
+      background-color: white;
+      transform: translateX(-20px);
+  }
+  
+
+#footer{
+    height: 5em;
+    background-color: black;
+    border-radius: 0 0 0.625em 0.625em;
+}
+
+#footer>p#pfooter{
+    margin: 0.3125em;
+    text-align: center;
+    color: aliceblue;
+}
+#footer>div{
+    text-align: center;
+    
+}
+#divsocialmedia img{
+    border: 0.125em solid white;
+    border-radius:50%;
+}
+#divsocialmedia img:hover{
+    opacity:0.5;
+}
+
+
+
+
+
+
+
+
